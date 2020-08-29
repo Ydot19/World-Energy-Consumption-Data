@@ -21,7 +21,7 @@ buildscript {
 plugins {
     // Apply the java plugin to add support for Java
     id 'java'
-
+    id 'application'
     id("org.springframework.boot") version "2.3.3.RELEASE" apply true
     id("io.spring.dependency-management") version "1.0.10.RELEASE"
 }
@@ -74,4 +74,9 @@ test {
     }
 
     maxHeapSize = '1G'
+}
+
+application {
+    // Define the main class for the application.
+    mainClassName('api.App')
 }
