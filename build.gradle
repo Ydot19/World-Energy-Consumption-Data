@@ -6,8 +6,6 @@
  * User Manual available at https://docs.gradle.org/6.5.1/userguide/tutorial_java_projects.html
  */
 
-import org.springframework.boot.gradle.plugin.SpringBootPlugin
-
 buildscript {
     repositories {
         jcenter()
@@ -21,7 +19,6 @@ buildscript {
 plugins {
     // Apply the java plugin to add support for Java
     id 'java'
-    id 'application'
     id("org.springframework.boot") version "2.3.3.RELEASE" apply true
     id("io.spring.dependency-management") version "1.0.10.RELEASE"
 }
@@ -56,8 +53,10 @@ dependencies {
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:29.0-jre'
 
-    implementation platform(SpringBootPlugin.BOM_COORDINATES)
+//    implementation platform(SpringBootPlugin.BOM_COORDINATES)
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly group: 'org.apache.poi', name: 'poi', version: '4.1.2'
+
     // Use JUnit Jupiter API for testing.
     testImplementation(
             "org.junit.jupiter:junit-jupiter-api:${junitVersion}",
@@ -76,7 +75,3 @@ test {
     maxHeapSize = '1G'
 }
 
-application {
-    // Define the main class for the application.
-    mainClassName('api.App')
-}
