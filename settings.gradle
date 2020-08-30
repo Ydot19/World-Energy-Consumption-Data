@@ -8,3 +8,5 @@
  */
 
 rootProject.name = 'World Energy Consumption API'
+include 'api'
+

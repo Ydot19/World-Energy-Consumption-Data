@@ -32,16 +32,21 @@ repositories {
     jcenter()
 }
 
+compileTestJava {
+    sourceCompatibility = 11
+    targetCompatibility = 11
+}
+
 sourceSets {
     main {
         java {
-            srcDirs = ['src/main/java/api']
+            srcDirs = ['src/main/java']
         }
     }
 
     test {
         java {
-            srcDirs = ['test/java/api']
+            srcDirs = ['src/test/java']
         }
     }
 }
@@ -52,6 +57,7 @@ ext.hamcrestVersion = '2.2'
 dependencies {
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:29.0-jre'
+
 
 //    implementation platform(SpringBootPlugin.BOM_COORDINATES)
     implementation 'org.springframework.boot:spring-boot-starter-web'
