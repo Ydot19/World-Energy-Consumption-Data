@@ -6,16 +6,6 @@
  * User Manual available at https://docs.gradle.org/6.5.1/userguide/tutorial_java_projects.html
  */
 
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.3.3.RELEASE")
-        // spring boot gradle plugin will used for generate jar
-    }
-}
-
 plugins {
     // Apply the java plugin to add support for Java
     id 'java'
