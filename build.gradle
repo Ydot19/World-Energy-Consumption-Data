@@ -51,8 +51,8 @@ dependencies {
 
 //    implementation platform(SpringBootPlugin.BOM_COORDINATES)
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    compileOnly group: 'org.apache.poi', name: 'poi', version: '4.1.2'
-
+    implementation 'org.springframework.boot:spring-boot-starter-cache'
+    implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '4.1.2'
     // Use JUnit Jupiter API for testing.
     testImplementation(
             "org.junit.jupiter:junit-jupiter-api:${junitVersion}",
